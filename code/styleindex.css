@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.slideshow-container {
+    max-width: 100%;  /* Riduci la larghezza massima dello slideshow al 80% della larghezza della finestra */
+    position: relative;
+    margin: 5vh auto; /* Questo centrerà orizzontalmente lo slideshow */
+    height: 70vh;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+}
+
+
+.mySlides img {
+    width: 100%;
+    height: 70vh;  /* Imposta l'altezza al 50% dell'altezza del viewport */
+    object-fit:cover; /* Mantiene le proporzioni dell'immagine mentre la ridimensiona */
+}
+
+.dot-container{
+    position: absolute;
+    top: 90%; /* Posiziona il top del contenitore dei dot al centro del slideshow-container */
+    width: 100%; /* Fa si che il contenitore dei dot abbia la stessa larghezza del slideshow-container */
+    text-align: center; /* Centra i dot orizzontalmente */
+    transform: translateY(-50%); /* Sposta il contenitore dei dot indietro di metà della sua altezza per centrarlo verticalmente */
+    background-color: transparent;
+}
+/* Stile per i punti/bottoni di navigazione */
+.dot {
+    cursor: pointer;
+    height: 2vh;
+    width: 2vh;
+    margin: 0 0.2vh;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.1vh solid #ccc;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    
+}
+
+.dotactive {
+    background-color: white;
+}
+
+.headingAbout{
+
+    margin-top: 4%;
+    margin-left: 8%;
+}
+
+.about-us1 {
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-bottom: 12%;
+    margin-right: 8%;
+}
+
+.about-us1 img{
+    border-radius: 2rem;
+    order:1;
+    width: 45%;
+    height: 45%;
+    object-fit:cover;
+}
+
+.contentAbout1 {
+    order:2;
+    margin-left: 10%;
+    width: 100%;
+    font-size:2.5vh;
+}
+
+.about-us2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2%;
+    margin-left: 8%;
+    margin-bottom: 12%;
+    margin-right: 8%;
+}
+
+.about-us2 img{
+    border-radius: 2rem;
+    order: 2;
+    width: 45%;
+    height: 45%;
+    object-fit:cover;
+}
+
+.contentAbout2 {
+    order: 1;
+    margin-right: 10%;
+    width: 100%;
+    font-size:2.5vh;
+}
+
+@media screen and (max-width: 1200px) { /* Cambia questo valore a seconda delle tue esigenze */
+    .about-us1, .about-us2 {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4%;
+        margin-bottom: 12%;
+    }
+    
+    .about-us1 img, .about-us2 img, .contentAbout1, .contentAbout2 {
+        order: 0; /* Questo farà in modo che l'immagine e il testo siano ordinati nello stesso modo su entrambi i layout */
+        width: 60%; /* Questo farà in modo che l'immagine e il testo occupino l'intera larghezza del contenitore */
+        margin-bottom: 4%;
+    }
+
+    .contentAbout1, .contentAbout2 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
