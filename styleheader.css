@@ -1,0 +1,203 @@
+header {
+    overflow: visible;
+}
+
+.navbar {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 2% 0; /* Aggiunto padding verticale e orizzontale per non far uscire una navigation bar enorme*/
+}
+
+.logo{
+    width: 16vw;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.logo #logo-hover{
+    display: none;
+}
+/*Stile dei link nella navigation bar, per font-size si è scelto vh perché dovrebbe
+adattarsi alle dimensioni della pagina*/
+.nav_link {
+    float: none;
+    color: aliceblue;
+    text-decoration:none;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.navbar #login_btn {
+    background-color: orange;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 1.8rem;
+    border: none;
+    outline: none;
+    border-radius: 20vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Colore dei link nella bar quando si passa con il mouse sopra*/
+.nav_link:hover, .logo:hover {
+    background-color: black;
+    color:orange;
+}
+
+.navbar button:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.navbar button:active{
+    scale: 0.95;
+}
+
+#user_btn {
+    display: none;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width:7vh;
+    height:7vh;
+    cursor: pointer;
+}
+
+#user_btn img {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1200px) { 
+    .nav_link{
+        display: none; /* Nasconde questi elementi su schermi di larghezza inferiore a 600px */
+    }
+
+    .navbar {
+        align-items: center;
+        text-align: center;
+        justify-content: space-around; /* Centra il logo su schermi di larghezza inferiore a 600px */
+    }
+}
+
+  /* Dropdown Content (Hidden by Default) */
+
+.dropdown_content {
+    display: none;
+}
+
+.dropdown_content::before {
+        content: "";
+        position: absolute;
+        top: -12.8%;
+        left: 78%;
+        transform: translate(-50%, 85%);
+        border: 1vh solid;
+        border-color: transparent transparent white transparent;
+        z-index: 2;
+}
+
+.user-header {
+    width: 100%;
+    margin: 0 1%;
+}
+
+.dropdown_content.show {
+    display: flex;
+    border-radius: 1.5vh;
+    background-color: white;
+    position: absolute;
+    top: 8vh;
+    left: -26vh;
+    right: 0;
+    width: 38vh;
+    min-height: 23vh;
+    z-index: 100;
+
+}
+
+.user_info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 0 1%;
+}
+
+.user_info h3 {
+    text-align:left;
+    font-size: 100%;
+    flex-grow: 1;
+    word-wrap:break-word; /* Aggiunto */
+    overflow-wrap:break-word; /* Aggiunto */
+    width: 70%; /* Aggiunto */
+}
+
+.user_info img {
+    width: 23%;
+    margin-right: 1vh;
+}
+
+.dropdown_content ul {
+    list-style-type: none;
+    width: 100%;
+    align-items: center;
+}
+
+.dropdown_content ul li{
+	position: relative;
+    padding: 2.5%;
+}
+
+.dropdown_content ul li .menu_link{
+    color: black;
+	transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.dropdown_content ul li hr {
+    border: 0;
+    height: 0.1vh;
+    background: #ccc;
+}
+
+.menu_link .wrap {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0.2vh;
+}
+
+
+.dropdown_content.active{
+	display: block;
+}
+
+.menu {
+    position: relative;
+}
+
+.menu_link img{
+    width: 5vh;
+    padding: 0.3vh;
+    margin-right: 3vh;
+    margin-left: 1.4vh;
+}
+
+.menu_link .wrap p {
+    font-size: large;
+}
+.menu_link .wrap:hover{
+    color:orange;
+    scale: 1.05;
+}
